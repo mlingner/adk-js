@@ -9,7 +9,7 @@ import {z} from 'zod';
 
 const MCPToolSchema = z.object({
   type: z.literal('object'),
-  properties: z.record(z.unknown()).optional(),
+  properties: z.record(z.string(), z.unknown()).optional(),
   required: z.string().array().optional(),
 });
 type MCPToolSchema = z.infer<typeof MCPToolSchema>;
